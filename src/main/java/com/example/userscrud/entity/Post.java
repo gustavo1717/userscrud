@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@NoArgsConstructor
+//@NoArgsConstructor
 @RequiredArgsConstructor
 public class Post {
 	

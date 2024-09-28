@@ -17,7 +17,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@NoArgsConstructor
+//@NoArgsConstructor
 @RequiredArgsConstructor
 public class User {
 	

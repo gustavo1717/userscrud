@@ -17,9 +17,9 @@ public class UserServiceImpl implements UserService {
 	
 	private UserRepository userRepository;
 	
-	public UserServiceImpl(UserRepository repository) {
-		this.userRepository=repository;
-	}
+//	public UserServiceImpl(UserRepository repository) {
+//		this.userRepository=repository;
+//	}
 
 	@Override
 	public List<User> getAllUsers() {
