@@ -32,7 +32,7 @@ public class User {
 	@JsonProperty("email_address")
 	private String email;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	private String password;
 	
 	@OneToMany(mappedBy = "user")

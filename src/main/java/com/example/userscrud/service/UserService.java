@@ -10,5 +10,6 @@ public interface UserService {
 	User createUser(User user);
 	User getUser(String email);
 	void deleteUser(String email);
+    void deleteUserByName(String name);
 
 }

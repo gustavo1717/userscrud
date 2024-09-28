@@ -17,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.userscrud.entity.Post;
 import com.example.userscrud.entity.User;
+import com.example.userscrud.exception.UserNotFoundException;
 import com.example.userscrud.repository.UserRepository;
 import com.example.userscrud.service.PostService;
 import com.example.userscrud.service.UserService;
@@ -84,6 +85,18 @@ public class UserController {
 				.buildAndExpand(savedPost.getId()).toUri();
 		return ResponseEntity.created(location).build();
 	}
+	
+	@DeleteMapping("/deleteByName/{name}")
+    public ResponseEntity<String> deleteUserByName(@PathVariable String name) {
+        try {
+            userService.deleteUserByName(name);
+            return ResponseEntity.ok("User deleted successfully.");
+        } catch (IllegalStateException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        } catch (UserNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
 	
 
 }
